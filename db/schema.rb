@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_201900) do
+ActiveRecord::Schema.define(version: 2018_11_12_203708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2018_11_12_201900) do
     t.string "name"
     t.text "description"
     t.float "price"
-    t.integer "discount"
+    t.integer "discount", default: 0
     t.string "photo"
-    t.boolean "free_shipping"
+    t.boolean "free_shipping", default: false
     t.bigint "cultural_origin_id"
     t.bigint "time_period_id"
     t.bigint "artifact_type_id"
