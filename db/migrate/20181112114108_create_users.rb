@@ -5,8 +5,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :phone_number
       t.float :average_rating
-
-      t.timestamps
     end
   end
 end

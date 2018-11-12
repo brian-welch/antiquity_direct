@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 2018_11_12_133746) do
     t.integer "discount"
     t.string "photo"
     t.boolean "free_shipping"
-    t.bigint "cultural_origins_id"
-    t.bigint "artifact_types_id"
-    t.bigint "time_periods_id"
+    t.bigint "cultural_origin_id"
+    t.bigint "time_period_id"
+    t.bigint "artifact_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artifact_types_id"], name: "index_artifacts_on_artifact_types_id"
-    t.index ["cultural_origins_id"], name: "index_artifacts_on_cultural_origins_id"
-    t.index ["time_periods_id"], name: "index_artifacts_on_time_periods_id"
+    t.index ["artifact_type_id"], name: "index_artifacts_on_artifact_type_id"
+    t.index ["cultural_origin_id"], name: "index_artifacts_on_cultural_origin_id"
+    t.index ["time_period_id"], name: "index_artifacts_on_time_period_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -66,20 +66,20 @@ ActiveRecord::Schema.define(version: 2018_11_12_133746) do
     t.string "last_name"
     t.string "phone_number"
     t.float "average_rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "artifacts", "artifact_types", column: "artifact_types_id"
-  add_foreign_key "artifacts", "cultural_origins", column: "cultural_origins_id"
-  add_foreign_key "artifacts", "time_periods", column: "time_periods_id"
+  add_foreign_key "artifacts", "artifact_types"
+  add_foreign_key "artifacts", "cultural_origins"
+  add_foreign_key "artifacts", "time_periods"
   add_foreign_key "bookings", "artifacts"
   add_foreign_key "bookings", "users"
 end
