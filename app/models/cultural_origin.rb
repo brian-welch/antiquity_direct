@@ -1,0 +1,2 @@
+class CulturalOrigin < ApplicationRecord
+end
