@@ -10,9 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_11_12_130219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "artifact_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artifacts", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.float "price"
+    t.integer "discount"
+    t.string "photo"
+    t.boolean "free_shipping"
+    t.bigint "cultural_origin_id"
+    t.bigint "time_period_id"
+    t.bigint "artifact_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artifact_type_id"], name: "index_artifacts_on_artifact_type_id"
+    t.index ["cultural_origin_id"], name: "index_artifacts_on_cultural_origin_id"
+    t.index ["time_period_id"], name: "index_artifacts_on_time_period_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "artifact_id"
+    t.bigint "user_id"
+    t.date "check_out_date"
+    t.date "return"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artifact_id"], name: "index_bookings_on_artifact_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cultural_origins", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_periods", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "artifacts", "artifact_types"
+  add_foreign_key "artifacts", "cultural_origins"
+  add_foreign_key "artifacts", "time_periods"
+  add_foreign_key "bookings", "artifacts"
+  add_foreign_key "bookings", "users"
 end

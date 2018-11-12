@@ -1,5 +1,6 @@
 class Artifact < ApplicationRecord
-  belongs_to :cultural_origins
-  belongs_to :artifact_types
-  belongs_to :time_periods
+  has_many :bookings
+  belongs_to :cultural_origin
+  belongs_to :time_period
+  belongs_to :artifact_type
 end
