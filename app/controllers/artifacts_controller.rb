@@ -1,5 +1,5 @@
 class ArtifactsController < ApplicationController
-  before_action :set_artifact, except: [:index, :new, :create]
+  before_action :set_artifact, only: [:show]
 
   def index
   end
