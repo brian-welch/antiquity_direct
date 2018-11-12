@@ -10,6 +10,7 @@ class CreateArtifacts < ActiveRecord::Migration[5.2]
       t.references :cultural_origin, foreign_key: true
       t.references :time_period, foreign_key: true
       t.references :artifact_type, foreign_key: true
+      t.references :condition, foreign_key: true
 
       t.timestamps
     end
