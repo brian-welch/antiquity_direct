@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_201900) do
     t.bigint "artifact_id"
     t.bigint "user_id"
     t.date "check_out_date"
-    t.date "return"
+    t.date "return_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artifact_id"], name: "index_bookings_on_artifact_id"
