@@ -28,7 +28,15 @@ class ArtifactsController < ApplicationController
   end
 
   def artifact_params
-    params.require(:artifact).permit(:name, :address, :phone_number, :category)
+    params.require(:artifact).permit(:name,
+                                     :description,
+                                     :price,
+                                     :discount,
+                                     :photo,
+                                     :free_shipping,
+                                     :cultural_origin_id,
+                                     :time_period_id,
+                                     :artifact_type_id,
+                                     :condition_id)
   end
-
 end
