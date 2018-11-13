@@ -2,7 +2,10 @@
 <%= f.error_notification %>
 
   <div class="form-input">
-    <%= f.input :check_out_date, class: 'form-control' %>
-    <%= f.input :return_date, class: 'form-control' %>
+    <label>From:
+    <%= f.date_field :check_out_date, class: 'form-control', label: "From:" %>
+    </label>
+    <label>To:
+    <%= f.date_field :return_date, class: 'form-control', label: "To:" %></label>
   </div>
 <% end %>
