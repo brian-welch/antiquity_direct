@@ -1,0 +1,8 @@
+<%= simple_form_for [@artifact, @booking] do |f| %>
+<%= f.error_notification %>
+
+  <div class="form-input">
+    <%= f.input :check_out_date, class: 'form-control' %>
+    <%= f.input :return_date, class: 'form-control' %>
+  </div>
+<% end %>
