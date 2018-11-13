@@ -1,8 +1,10 @@
 <h1><%= @artifact.name %></h1>
+ <!--   -->
 
 <div class="container">
-  <%= image_tag(@artifact.photo) %>
+  <a href="#" style="width:70px"><%= image_tag(@artifact.photo) %></a>
 </div>
-<!-- <p>Find me in app/views/artifacts/show.html.erb</p>
- -->
+<%= @artifact.price %>
+<input type="submit" name="book" value="Book" class="btn">
 If you see this, then the first test of the 'new' form worked
+<!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->
