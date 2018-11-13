@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   resources :artifacts, only: [:index, :show, :new, :create] do
     resources :bookings, only: [ :create ]
   end
-  post 'bookings', to: 'bookings#create'
   get 'artifacts/:id/contact', to: 'contacts#new'
   post 'contacts', to: 'contacts#create'
-  get 'dashboard', to: 'dashboards#index'
-
+  get 'dashboard', to: 'dashboards#index', as: "dashboard"
 
 end
