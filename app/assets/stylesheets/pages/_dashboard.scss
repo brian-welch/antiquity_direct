@@ -1,0 +1,60 @@
+.dashboard-container {
+  div {
+    padding: 20px;
+  }
+  hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #999;
+  }
+  .top-row.row {
+    overflow: hidden;
+  }
+  .top-row.row > [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+  }
+}
+
+.dashboard-table {
+}
+
+.user-box{
+  outline: 1px dotted blue;
+  h3 {
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+  }
+  ul > li > i {
+    margin-right: 10px;
+  }
+}
+
+.user-has-booked {
+}
+
+.others-have-booked {
+}
+
+.right-block, .bottom-block {
+  table {
+    width: 100%;
+    font-size: 0.8em;
+    line-height: 1.5em;
+  }
+  table th, table td {
+    text-align: center;
+  }
+  table td:first-child {
+    text-align: left;
+  }
+  table td:last-child {
+    text-align: right;
+  }
+}
+
+
+
