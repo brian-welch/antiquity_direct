@@ -10,6 +10,7 @@ class ArtifactsController < ApplicationController
   def show
     # write code to get a specific artifact from db (assign to instance variable)
     @artifact = Artifact.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

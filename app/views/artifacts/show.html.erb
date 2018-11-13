@@ -1,8 +1,20 @@
-<h1>Artifact:</h1>
+<h1><%= @artifact.name %></h1>
+ <!--   -->
 
-<h2><%= @artifact.name %></h2>
+<div class="container">
+  <a href="#" style="width:70px"><%= image_tag(@artifact.photo) %></a>
+</div>
+  <h4>$<%= @artifact.price %> /day</h4>
 
-<p><%= @artifact.address %></p>
-<p>Find me in app/views/artifacts/show.html.erb</p>
+<!-- NEED TO WORK ON CONTROLLER TO MAKE SURE FORM WORKS -->
+
+<!-- simple form for booking -->
+<div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
+  <%= render 'shared/booking_form' %>
+<!-- button for booking -->
+  <input type="submit" name="book" value="Book" class="btn">
+</div>
+
 
 If you see this, then the first test of the 'new' form worked
+<!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->
