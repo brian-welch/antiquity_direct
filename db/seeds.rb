@@ -171,7 +171,8 @@ Artifact.create!([
     cultural_origin: CulturalOrigin.find(4),
     artifact_type: ArtifactType.find(1),
     condition: Condition.find(rand(1..6)),
-    price: (rand(5..7) * 5 * rand(223..230))
+    price: (rand(5..7) * 5 * rand(223..230)),
+    user: User.all.sample
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
     photo: "app/assets/images/trench_knife.jpg",
@@ -179,7 +180,8 @@ Artifact.create!([
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(2),
     condition: Condition.find(rand(1..6)),
-    price: (rand(5..7) * 5 * rand(223..230))
+    price: (rand(5..7) * 5 * rand(223..230)),
+    user: User.all.sample
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
     photo: "app/assets/images/laurel_wreath.png",
@@ -187,7 +189,8 @@ Artifact.create!([
     cultural_origin: CulturalOrigin.find(4),
     artifact_type: ArtifactType.find(10),
     condition: Condition.find(rand(1..6)),
-    price: (rand(5..7) * 5 * rand(223..230))
+    price: (rand(5..7) * 5 * rand(223..230)),
+    user: User.all.sample
   }, {
     name: "Samurai Armour",
     photo: "app/assets/images/samurai.jpg",
@@ -195,7 +198,8 @@ Artifact.create!([
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(1),
     condition: Condition.find(rand(1..6)),
-    price: (rand(5..7) * 5 * rand(223..230))
+    price: (rand(5..7) * 5 * rand(223..230)),
+    user: User.all.sample
     }, {
     name: "Terracotta Warrior/s",
     photo: "app/assets/images/terracotta-warriors.jpg",
@@ -203,7 +207,8 @@ Artifact.create!([
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(10),
     condition: Condition.find(rand(1..6)),
-    price: (rand(5..7) * 5 * rand(223..230))
+    price: (rand(5..7) * 5 * rand(223..230)),
+    user: User.all.sample
   }
 ])
 

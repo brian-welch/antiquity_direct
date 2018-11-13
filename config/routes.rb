@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post 'contacts', to: 'contacts#create'
   get 'dashboard', to: 'dashboards#index'
 
+
 end
