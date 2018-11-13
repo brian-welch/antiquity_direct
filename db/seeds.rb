@@ -143,12 +143,12 @@ new_time_period = User.new(first_name: 'brian',
                                  email: 'myself@brianwelch.se',
                                  password: 'brianbrian')
 new_time_period.save!
-new_time_period = User.new(first_name: 'beltràn',
+new_time_period = User.new(first_name: 'beltrán',
                                  last_name: 'Sainz de vicuña nowack',
                                  phone_number: '',
                                  average_rating: 0.0,
                                  email: 'gorthor@gmail.com',
-                                 password: 'beltrànbeltràn')
+                                 password: 'beltranbeltran')
 new_time_period.save!
 new_time_period = User.new(first_name: 'makena',
                                  last_name: 'hawley',
@@ -166,7 +166,7 @@ sleep 1
 Artifact.create!([
   {
     name: "Winged Hussar's Armour",
-    photo: "hussar_armour.jpg",
+    photo: "app/assets/images/hussar_armour.jpg",
     time_period: TimePeriod.find(1),
     cultural_origin: CulturalOrigin.find(4),
     artifact_type: ArtifactType.find(1),
@@ -174,7 +174,7 @@ Artifact.create!([
     price: (rand(5..7) * 5 * rand(223..230))
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
-    photo: "trench_knife.jpg",
+    photo: "app/assets/images/trench_knife.jpg",
     time_period: TimePeriod.find(1),
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(2),
@@ -182,7 +182,7 @@ Artifact.create!([
     price: (rand(5..7) * 5 * rand(223..230))
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
-    photo: "laurel_wreath.png",
+    photo: "app/assets/images/laurel_wreath.png",
     time_period: TimePeriod.find(1),
     cultural_origin: CulturalOrigin.find(4),
     artifact_type: ArtifactType.find(10),
@@ -190,7 +190,7 @@ Artifact.create!([
     price: (rand(5..7) * 5 * rand(223..230))
   }, {
     name: "Samurai Armour",
-    photo: "samurai.jpg",
+    photo: "app/assets/images/samurai.jpg",
     time_period: TimePeriod.find(1),
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(1),
@@ -198,7 +198,7 @@ Artifact.create!([
     price: (rand(5..7) * 5 * rand(223..230))
     }, {
     name: "Terracotta Warrior/s",
-    photo: "terracotta-warriors.jpg",
+    photo: "app/assets/images/terracotta-warriors.jpg",
     time_period: TimePeriod.find(1),
     cultural_origin: CulturalOrigin.find(5),
     artifact_type: ArtifactType.find(10),

@@ -1,8 +1,8 @@
-<h1>Artifact:</h1>
+<h1><%= @artifact.name %></h1>
 
-<h2><%= @artifact.name %></h2>
-
-<p><%= @artifact.address %></p>
-<p>Find me in app/views/artifacts/show.html.erb</p>
-
+<div class="container">
+  <%= image_tag(@artifact.photo) %>
+</div>
+<!-- <p>Find me in app/views/artifacts/show.html.erb</p>
+ -->
 If you see this, then the first test of the 'new' form worked
