@@ -5,8 +5,10 @@
       <!-- Insert card here -->
       <div class="col-xs-12 col-sm-4 offset-sm-4">
         <% @artifacts.each do |artifact| %>
-          <h2><%= artifact.name %></h2>
-          <p><%= artifact.photo %></p>
+          <h3><%= artifact.name %></h3>
+          <img src="<%= artifact.photo %>" alt="<% @artifact.name %>">
+
+          <!-- <%= image_tag(@artifact.photo) %> -->
         <% end %>
       </div>
     </div>
