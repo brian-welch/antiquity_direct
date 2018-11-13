@@ -1,0 +1,51 @@
+<%= simple_form_for(@artifact) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-input">
+  <%= f.input :name, class: 'form-control' %>
+  <%= f.input :description, :as => "text" %>
+  <%= f.input :photo, class: 'form-control' %>
+  <%= f.association :cultural_origin, class: 'form-control' %>
+</div>
+<div class="form-input">
+  <div class="col-sm-6">
+    <%= f.input :price, class: 'form-control' %>
+  </div>
+  <div class="col-sm-6">
+    <%= f.input :percent_discount, class: 'form-control' %>
+  </div>
+</div>
+<div class="form-input ">
+  <div class="col-sm-6">
+    <%= f.input :free_shipping, class: 'form-control', :as => "select" %>
+  </div>
+  <div class="col-sm-6">
+    <%= f.association :artifact_type, class: 'form-control' %>
+  </div>
+</div>
+<div class="form-input ">
+  <div class="col-sm-6">
+    <%= f.association :time_period, class: 'form-control' %>
+  </div>
+  <div class="col-sm-6">
+    <%= f.association :condition, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-input form-actions  ">
+  <%= f.button :submit, class: 'btn btn-primary form-control' %>
+</div>
+<% end %>
+
+
+
+<!--
+      t.string :name
+      t.text :description
+      t.float :price
+      t.integer :discount
+      t.string :photo
+      t.boolean :free_shipping
+      t.references :cultural_origin, foreign_key: true
+      t.references :time_period, foreign_key: true
+      t.references :artifact_type, foreign_key: true -->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_133746) do
+ActiveRecord::Schema.define(version: 2018_11_13_051129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,28 +25,36 @@ ActiveRecord::Schema.define(version: 2018_11_12_133746) do
     t.string "name"
     t.text "description"
     t.float "price"
-    t.integer "discount"
+    t.integer "percent_discount", default: 0
     t.string "photo"
-    t.boolean "free_shipping"
+    t.boolean "free_shipping", default: false
     t.bigint "cultural_origin_id"
     t.bigint "time_period_id"
     t.bigint "artifact_type_id"
+    t.bigint "condition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artifact_type_id"], name: "index_artifacts_on_artifact_type_id"
+    t.index ["condition_id"], name: "index_artifacts_on_condition_id"
     t.index ["cultural_origin_id"], name: "index_artifacts_on_cultural_origin_id"
     t.index ["time_period_id"], name: "index_artifacts_on_time_period_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.date "check_out_date"
-    t.date "return_date"
-    t.bigint "user_id"
     t.bigint "artifact_id"
+    t.bigint "user_id"
+    t.date "check_out_date"
+    t.date "return"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artifact_id"], name: "index_bookings_on_artifact_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cultural_origins", force: :cascade do |t|
@@ -78,6 +86,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_133746) do
   end
 
   add_foreign_key "artifacts", "artifact_types"
+  add_foreign_key "artifacts", "conditions"
   add_foreign_key "artifacts", "cultural_origins"
   add_foreign_key "artifacts", "time_periods"
   add_foreign_key "bookings", "artifacts"

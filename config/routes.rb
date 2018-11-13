@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
+  get 'bookings/new'
+  get 'bookings/create'
+  get 'bookings/index'
   devise_for :users
   root to: 'pages#home'
   get 'design', to: 'pages#design'
