@@ -1,2 +1,14 @@
-<h1>Artifacts#index</h1>
-<p>Find me in app/views/artifacts/index.html.erb</p>
+
+<div class="container">
+  <h1>Artifacts</h1>
+    <div class="row">
+      <!-- Insert card here -->
+      <div class="col-xs-12 col-sm-4 offset-sm-4">
+        <% @artifacts.each do |artifact| %>
+          <h2><%= artifact.name %></h2>
+          <p><%= artifact.photo %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
