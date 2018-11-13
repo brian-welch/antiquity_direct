@@ -1,14 +1,14 @@
 
 <div class="container">
-  <h1>Artifacts</h1>
+  <h1>Artifacts:</h1>
     <div class="row">
       <!-- Insert card here -->
       <div class="col-xs-12 col-sm-4 offset-sm-4">
         <% @artifacts.each do |artifact| %>
-          <h3><%= artifact.name %></h3>
-          <img src="<%= artifact.photo %>" alt="<% @artifact.name %>">
+          <h3><%= link_to artifact.name, artifact %></h3>
+         <%= image_tag(artifact.photo) %>
 
-          <!-- <%= image_tag(@artifact.photo) %> -->
+
         <% end %>
       </div>
     </div>
