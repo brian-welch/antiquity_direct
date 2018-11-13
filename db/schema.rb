@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_203708) do
+ActiveRecord::Schema.define(version: 2018_11_13_051129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_203708) do
     t.string "name"
     t.text "description"
     t.float "price"
-    t.integer "discount", default: 0
+    t.integer "percent_discount", default: 0
     t.string "photo"
     t.boolean "free_shipping", default: false
     t.bigint "cultural_origin_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_203708) do
     t.bigint "artifact_id"
     t.bigint "user_id"
     t.date "check_out_date"
-    t.date "return_date"
+    t.date "return"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artifact_id"], name: "index_bookings_on_artifact_id"
