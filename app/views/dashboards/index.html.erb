@@ -1,4 +1,98 @@
+<div class="container dashboard-container">
 
-<h1><%= @current_user.first_name.capitalize  %>'s Dashboard & Profile</h1>
+  <h1><%= @current_user.first_name.capitalize  %>'s Dashboard & Profile</h1>
+
+  <div class="top-row row">
+
+    <div class="col-xs-12 col-sm-4 user-box left-block">
+      <h3><%= @current_user.first_name.capitalize  %> <%= @current_user.last_name.capitalize  %></h3>
+      <hr>
+      <ul class="">
+        <li><i class="fas fa-envelope-square"></i> <%= @current_user.email %></li>
+        <li><i class="fas fa-phone-square"></i><%= @current_user.phone_number %></li>
+      </ul>
+    </div>
 
 
+    <div class="col-xs-12 col-sm-8 user-has-booked right-block">
+      <h3>My Personal Bookings</h3>
+      <table>
+          <tr><th>Artifact</th><th>Check Out Date</th><th>Return Date</th><th>Total Price</th></tr>
+        <% #@my_bookings.each do |booking| %>
+          <tr>
+            <td class="my-bookings-artifact">Thor's Hammer</td>
+            <td class="my-bookings-checkout">December 12th, 2018</td>
+            <td class="my-bookings-checkout">December 21st, 2018</td>
+            <td class="my-bookings-price-total">350 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Zeus's Beard Comb</td>
+            <td class="my-bookings-checkout">January 7th, 2019</td>
+            <td class="my-bookings-checkout">March 1st, 2019</td>
+            <td class="my-bookings-price-total">550 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Samuri Armour</td>
+            <td class="my-bookings-checkout">December 1st, 2018</td>
+            <td class="my-bookings-checkout">December 7th, 2018</td>
+            <td class="my-bookings-price-total">150 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Thor's Hammer</td>
+            <td class="my-bookings-checkout">December 12th, 2018</td>
+            <td class="my-bookings-checkout">December 21st, 2018</td>
+            <td class="my-bookings-price-total">350 000.00 €</td>
+          </tr>
+        <% #end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-xs-12 others-have-booked bottom-block">
+      <h3>My Customers</h3>
+      <table>
+          <tr><th>Artifact</th><th>Customer Name</th><th>Customer Phone</th><th>Customer Email</th><th>Check Out Date</th><th>Return Date</th><th>Total Price</th></tr>
+        <% #@others_bookings.each do |booking| %>
+          <tr>
+            <td class="my-bookings-artifact">Thor's Hammer</td>
+            <td>Joe Blow</td>
+            <td>+46789455667</td>
+            <td>joe.blow@yourmomshouse.com</td>
+            <td class="my-bookings-checkout">December 12th, 2018</td>
+            <td class="my-bookings-checkout">December 21st, 2018</td>
+            <td class="my-bookings-price-total">350 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Zeus's Beard Comb</td>
+            <td>Joe Blow</td>
+            <td>+46789455667</td>
+            <td>joe.blow@yourmomshouse.com</td>
+            <td class="my-bookings-checkout">January 7th, 2019</td>
+            <td class="my-bookings-checkout">March 1st, 2019</td>
+            <td class="my-bookings-price-total">550 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Samuri Armour</td>
+            <td>Joe Blow</td>
+            <td>+46789455667</td>
+            <td>joe.blow@yourmomshouse.com</td>
+            <td class="my-bookings-checkout">December 1st, 2018</td>
+            <td class="my-bookings-checkout">December 7th, 2018</td>
+            <td class="my-bookings-price-total">150 000.00 €</td>
+          </tr>
+          <tr>
+            <td class="my-bookings-artifact">Thor's Hammer</td>
+            <td>Joe Blow</td>
+            <td>+46789455667</td>
+            <td>joe.blow@yourmomshouse.com</td>
+            <td class="my-bookings-checkout">December 12th, 2018</td>
+            <td class="my-bookings-checkout">December 21st, 2018</td>
+            <td class="my-bookings-price-total">350 000.00 €</td>
+          </tr>
+        <% #end %>
+      </table>
+    </div>
+  </div>
+
+</div>
