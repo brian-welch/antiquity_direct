@@ -1,5 +1,5 @@
 class ArtifactsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_artifact, only: [:show]
 
   def index
@@ -10,6 +10,7 @@ class ArtifactsController < ApplicationController
   def show
     # write code to get a specific artifact from db (assign to instance variable)
     @artifact = Artifact.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
