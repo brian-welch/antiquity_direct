@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
     else
       redirect_to artifact_path(@artifact)
     end
-
   end
 
   def index

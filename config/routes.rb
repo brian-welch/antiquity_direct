@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   get 'artifacts/:id/contact', to: 'contacts#new'
   post 'contacts', to: 'contacts#create'
   get 'dashboard', to: 'dashboards#index', as: "dashboard"
-
 end
