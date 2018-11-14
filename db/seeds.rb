@@ -172,7 +172,7 @@ Artifact.create!([
     artifact_type: ArtifactType.find_by_name('armour'),
     condition: Condition.find_by_name('mint'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
     photo: "app/assets/images/trench_knife.jpg",
@@ -181,7 +181,7 @@ Artifact.create!([
     artifact_type: ArtifactType.find_by_name('weapon'),
     condition: Condition.find_by_name('rustic'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
     photo: "app/assets/images/laurel_wreath.png",
@@ -190,7 +190,7 @@ Artifact.create!([
     artifact_type: ArtifactType.find_by_name('accessory'),
     condition: Condition.find_by_name('good'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('gorthor@gmail.com')
   }, {
     name: "Samurai Armour",
     photo: "app/assets/images/samurai.jpg",
@@ -199,7 +199,7 @@ Artifact.create!([
     artifact_type: ArtifactType.find_by_name('armour'),
     condition: Condition.find_by_name('like new'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Terracotta Warrior/s",
     photo: "app/assets/images/terracotta-warriors.jpg",
@@ -208,7 +208,7 @@ Artifact.create!([
     artifact_type: ArtifactType.find_by_name('skulpture'),
     condition: Condition.find_by_name('ramshackle'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('makena.hawley@gmail.com')
   }
 ])
 
