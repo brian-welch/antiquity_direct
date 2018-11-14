@@ -3,14 +3,13 @@
   <h1>Artifacts:</h1>
     <div class="row">
       <!-- Insert card here -->
-      <div class="col-xs-12 col-sm-4 offset-sm-4">
-        <% @artifacts.each do |artifact| %>
-          <h3><%= link_to artifact.name, artifact %></h3>
-         <%= image_tag(artifact.photo) %>
-
-
-        <% end %>
-      </div>
+      <% @artifacts.each do |artifact| %>
+        <div class="col-xs-12 col-sm-4 offset-sm-4">
+          <div class="card" style="background-image: url(<%= asset_path artifact.photo %>); width:300px; height:500px">
+            <h3><%= link_to artifact.name, artifact %></h3>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 
