@@ -24,6 +24,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:check_out_date, :return_date, :artifact_id)
+    params.require(:booking).permit(:check_out_date, :return_date, :artifact_id, booking_pending: true)
   end
 end
