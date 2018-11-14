@@ -304,8 +304,8 @@ user_emails = ["makena.hawley@gmail.com",
   month_two = rand(7..12)
   day = rand(1..28)
 
-  Booking.create(artifact_id: Artifact.all.sample,
-                 user_id: User.all.sample,
+  Booking.create(artifact_id: Artifact.find_by_name(artifact_names[rand(0..11)]).id,
+                 user_id: User.find_by_email(user_emails[rand(0..2)]).id,
                  check_out_date: ("#{year}-#{month_one}-#{day}"),
                  return_date: ("#{year}-#{month_two}-#{day}")
   )
