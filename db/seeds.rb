@@ -114,7 +114,7 @@ puts "\n              - Cultural cultural_origins in database: #{CulturalOrigin.
 ## seed artifact types table form array
 puts "\nPopulating Artifact Types......"
 sleep 1
-artifact_types = ['armour', 'weapon', 'book', 'scroll', 'painting', 'toy', 'map', 'invention', 'clothing', 'sculpture', 'building']
+artifact_types = ['armour', 'weapon', 'book', 'scroll', 'painting', 'toy', 'map', 'invention', 'clothing', 'skulpture', 'building', 'accessory']
 artifact_types.each do |artifact_type|
   new_artifact_type = ArtifactType.new(name: artifact_type)
   new_artifact_type.save!
@@ -166,56 +166,51 @@ sleep 1
 Artifact.create!([
   {
     name: "Winged Hussar's Armour",
-    photo: "app/assets/images/hussar_armour.jpg",
-    time_period: TimePeriod.find(1),
-    cultural_origin: CulturalOrigin.find(4),
-    artifact_type: ArtifactType.find(1),
+    hoto: "app/assets/images/hussar_armour.jpg",
+    time_period: TimePeriod.where(name: 'middle ages'),
+    cultural_origin: CulturalOrigin.where(name: 'western'),
+    artifact_type: ArtifactType.where(name: 'armour'),
     condition: Condition.find(rand(1..6)),
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.all.sample
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
     photo: "app/assets/images/trench_knife.jpg",
-    time_period: TimePeriod.find(1),
-    cultural_origin: CulturalOrigin.find(5),
-    artifact_type: ArtifactType.find(2),
+    time_period: TimePeriod.where(name: 'middle ages'),
+    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
+    artifact_type: ArtifactType.where(name: 'weapon'),
     condition: Condition.find(rand(1..6)),
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.all.sample
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
     photo: "app/assets/images/laurel_wreath.png",
-    time_period: TimePeriod.find(1),
-    cultural_origin: CulturalOrigin.find(4),
-    artifact_type: ArtifactType.find(10),
+    time_period: TimePeriod.where(name: 'middle ages'),
+    cultural_origin: CulturalOrigin.where(name: 'western'),
+    artifact_type: ArtifactType.where(name: 'accessory'),
     condition: Condition.find(rand(1..6)),
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.all.sample
   }, {
     name: "Samurai Armour",
     photo: "app/assets/images/samurai.jpg",
-    time_period: TimePeriod.find(1),
-    cultural_origin: CulturalOrigin.find(5),
-    artifact_type: ArtifactType.find(1),
+    time_period: TimePeriod.where(name: 'middle ages'),
+    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
+    artifact_type: ArtifactType.where(name: 'armour'),
     condition: Condition.find(rand(1..6)),
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.all.sample
     }, {
     name: "Terracotta Warrior/s",
     photo: "app/assets/images/terracotta-warriors.jpg",
-    time_period: TimePeriod.find(1),
-    cultural_origin: CulturalOrigin.find(5),
-    artifact_type: ArtifactType.find(10),
+    time_period: TimePeriod.where(name: 'middle ages'),
+    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
+    artifact_type: ArtifactType.where(name: 'skulpture'),
     condition: Condition.find(rand(1..6)),
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.all.sample
   }
 ])
-
-# artifacts.each_with_index do |hash, i|
-#   p hash[i]
-#   Artifact.new(hash[i])
-# end
 
 puts "\n              - Artifacts in database: #{Artifact.count}!\n"
 
