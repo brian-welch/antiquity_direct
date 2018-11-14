@@ -4,6 +4,7 @@ class Artifact < ApplicationRecord
   belongs_to :time_period
   belongs_to :artifact_type
   belongs_to :condition
+  belongs_to :user
 
   validates :name, uniqueness: true, presence: true
   validates :price, presence: true
