@@ -18,7 +18,12 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-antiquities-item">
         <div class="dropdown">
-          <% current_user.photo.nil? ? a_img = "http://i.pravatar.cc/50" : a_img = current_user.photo %>
+          <%  me = current_user
+              if current_user.photo.nil?
+                a_img = "https://ui-avatars.com/api/?name=#{me.first_name}+#{me.last_name}&background=0D8ABC&color=eaec96"
+              else
+                a_img = current_user.photo
+              end %>
           <%= image_tag a_img, class: "avatar dropdown-toggle", id: "navbar-antiquities-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-antiquities-dropdown-menu">
             <li>
