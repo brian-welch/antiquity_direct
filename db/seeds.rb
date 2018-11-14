@@ -284,7 +284,7 @@ puts "\nPopulating Bookings......"
 sleep 1
 artifact_names = ["Winged Hussar's Armour",
                   "U.S. Model 1918 Mark I Trench Knife",
-                  "Napoleon Bonaparte's Gold Laurel Wreath",
+                  "Napoléon Bonaparte's Gold Laurel Wreath",
                   "Samurai Armour",
                   "Terracotta Warriors",
                   "Leonardo Da Vinci's Sketch Book",
