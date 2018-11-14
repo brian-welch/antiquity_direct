@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_075151) do
+ActiveRecord::Schema.define(version: 2018_11_13_161959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(version: 2018_11_13_075151) do
     t.bigint "condition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["artifact_type_id"], name: "index_artifacts_on_artifact_type_id"
     t.index ["condition_id"], name: "index_artifacts_on_condition_id"
     t.index ["cultural_origin_id"], name: "index_artifacts_on_cultural_origin_id"
     t.index ["time_period_id"], name: "index_artifacts_on_time_period_id"
+    t.index ["user_id"], name: "index_artifacts_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_075151) do
   add_foreign_key "artifacts", "conditions"
   add_foreign_key "artifacts", "cultural_origins"
   add_foreign_key "artifacts", "time_periods"
+  add_foreign_key "artifacts", "users"
   add_foreign_key "bookings", "artifacts"
   add_foreign_key "bookings", "users"
 end
