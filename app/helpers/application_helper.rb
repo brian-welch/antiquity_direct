@@ -7,4 +7,19 @@ module ApplicationHelper
       return current_user.photo
     end
   end
+
+  def booking_status(conf, decl)
+    if decl
+      return "declined"
+    elsif conf
+      return "confirmed"
+    else
+      return "pending"
+    end
+  end
+
+  def booking_cost(art_id, out, retur)
+    n = @artifacts.find(art_id).price * (retur - out).to_i
+    Object.new.extend(ActionView::Helpers::NumberHelper).number_to_currency(n, unit: "€ ", separator: ".", delimiter: " ")
+  end
 end
