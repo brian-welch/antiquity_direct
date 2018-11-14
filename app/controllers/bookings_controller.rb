@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     # @booking.artifact = @artifact
     @booking.user = current_user
     if @booking.save
+      flash[:notice] = "Booking was successfully requested. Now awaiting approval."
       redirect_to dashboard_path
     else
       redirect_to artifact_path(@artifact)
@@ -26,3 +27,4 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:check_out_date, :return_date, :artifact_id, booking_pending: true)
   end
 end
+
