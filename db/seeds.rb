@@ -166,7 +166,7 @@ sleep 1
 Artifact.create!([
   {
     name: "Winged Hussar's Armour",
-    photo: "app/assets/images/hussar_armour.jpg",
+    photo: "hussar_armour.jpg",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('armour'),
@@ -175,7 +175,7 @@ Artifact.create!([
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
-    photo: "app/assets/images/trench_knife.jpg",
+    photo: "trench_knife.jpg",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('weapon'),
@@ -184,7 +184,7 @@ Artifact.create!([
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
-    photo: "app/assets/images/laurel_wreath.png",
+    photo: "laurel_wreath.png",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('accessory'),
@@ -193,7 +193,7 @@ Artifact.create!([
     user: User.find_by_email('gorthor@gmail.com')
   }, {
     name: "Samurai Armour",
-    photo: "app/assets/images/samurai.jpg",
+    photo: "samurai.jpg",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('armour'),
@@ -202,7 +202,7 @@ Artifact.create!([
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Terracotta Warrior/s",
-    photo: "app/assets/images/terracotta-warriors.jpg",
+    photo: "terracotta-warriors.jpg",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('skulpture'),
