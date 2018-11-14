@@ -10,7 +10,12 @@
 
 <!-- simple form for booking -->
 <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
-  <%= render 'shared/booking_form' %>
+  <!-- CONDITIONAL STATEMENT TO HIDE BOOKING FORM IF NOT LOGGED IN -->
+  <% if user_signed_in? %>
+    <%= render 'shared/booking_form' %>
+    <% else %>
+    <%= flash[:danger] = "Please log in." %>
+  <% end %>
 <!-- button for booking -->
 </div>
 
