@@ -6,8 +6,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @artifact = Artifact.find(params[:artifact_id])
-    @booking.artifact = @artifact
+    # @artifact = Artifact.find(params[:artifact_id])
+    # @booking.artifact = @artifact
     @booking.user = current_user
     if @booking.save
       redirect_to dashboard_path
@@ -17,13 +17,13 @@ class BookingsController < ApplicationController
 
   end
 
-  def index
-    @bookings = Booking.all
-  end
+  # def index
+  #   @bookings = Booking.all
+  # end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:check_out_date, :return_date)
+    params.require(:booking).permit(:check_out_date, :return_date, :artifact_id)
   end
 end

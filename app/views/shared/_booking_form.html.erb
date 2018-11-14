@@ -1,4 +1,4 @@
-<%= simple_form_for [@artifact, @booking] do |f| %>
+<%= simple_form_for [@booking] do |f| %>
 <%= f.error_notification %>
 
   <div class="form-input">
@@ -7,7 +7,8 @@
     </label>
     <label>To:
     <%= f.date_field :return_date, class: 'form-control', label: "To:" %></label>
+    <%= f.hidden_field :artifact_id, :value => @artifact.id %>
   </div>
-
+  <% #raise %>
   <%= f.submit %>
 <% end %>
