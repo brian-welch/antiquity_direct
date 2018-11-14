@@ -1,25 +1,25 @@
-<h1><%= @artifact.name %></h1>
-  <div class="container">
-     <!--   -->
-    <div style="max-width:250px">
-      <a><%= image_tag(@artifact.photo) %></a>
-    </div>
-      <h4>$<%= @artifact.price %> /day</h4>
+<div class="show-layout">
+  <div class="show-layout-column">
+    <%= image_tag(@artifact.photo, class: "show-layout-img")%>
+  </div>
+  <div class="show-layout-column">
+    <h1><%= @artifact.name %></h1>
+    <h4>$<%= @artifact.price %> /day</h4>
+    <% if user_signed_in? %>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
+        <%= render 'shared/booking_form' %>
+      </div>
+    <% else %>
+      <%= flash[:danger] = "Please log in." %>
+    <% end %>
+  </div>
+</div>
 
     <!-- NEED TO WORK ON CONTROLLER TO MAKE SURE FORM WORKS -->
 
     <!-- simple form for booking -->
-  </div>
     <!-- CONDITIONAL STATEMENT TO HIDE BOOKING FORM IF NOT LOGGED IN -->
-  <% if user_signed_in? %>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
-      <%= render 'shared/booking_form' %>
-    <% else %>
-    <%= flash[:danger] = "Please log in." %>
-  <% end %>
-  <!-- button for booking -->
-    </div>
 
 
-If you see this, then the first test of the 'new' form worked
-<!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->
+<!-- If you see this, then the first test of the 'new' form worked
+ --><!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->
