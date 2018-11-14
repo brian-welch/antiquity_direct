@@ -4,13 +4,13 @@
     <div class="row">
       <!-- Insert card here -->
       <% @artifacts.each do |artifact| %>
-        <div class="col-xs-12 col-sm-4 offset-sm-4">
-          <div class="card" style="background-image: url(<%= asset_path artifact.photo %>); width:300px; height:500px">
-            <h3>$<%= artifact.price %>/day</h3>
-          </div>
-            <h3><%= link_to artifact.name, artifact %></h3>
+      <div class="col-xs-12 col-sm-4 offset-sm-4">
+        <div class="card" style="background-image: url(<%= asset_path artifact.photo %>); width:300px; height:500px">
+        <h4>$<%= artifact.price %>/day</h4>
         </div>
-      <% end %>
-    </div>
+        <h3><%= link_to artifact.name, artifact %></h3>
+        <p><%= artifact.description %></p>
+      </div>
+    <% end %>
   </div>
-
+</div>

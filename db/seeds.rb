@@ -186,7 +186,7 @@ Artifact.create!([
     price: (rand(5..7) * 5 * rand(223..230)),
     user: User.find_by_email('myself@brianwelch.se')
     }, {
-    name: "Napoleon Bonaparte's Gold Laurel Wreath",
+    name: "Napoléon Bonaparte's Gold Laurel Wreath",
     photo: "laurel_wreath.png",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('western'),
