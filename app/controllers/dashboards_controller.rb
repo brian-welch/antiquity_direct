@@ -1,13 +1,7 @@
 class DashboardsController < ApplicationController
-  before_action :set_user
 
-  def index
-  end
-
-  private
-
-  def set_user
-    @current_user = User.find(current_user.id)
-  end
-
+def index
+  @user = current_user
+  @bookings = Booking.all
 end
+ end

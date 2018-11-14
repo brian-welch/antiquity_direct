@@ -1,5 +1,5 @@
 class ArtifactsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_artifact, only: [:show]
 
   def index

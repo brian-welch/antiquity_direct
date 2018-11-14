@@ -18,32 +18,14 @@
       <h3>My Personal Bookings</h3>
       <table>
           <tr><th>Artifact</th><th>Check Out Date</th><th>Return Date</th><th>Total Price</th></tr>
-        <% #@my_bookings.each do |booking| %>
+        <% current_user.bookings.each do |booking| %>
           <tr>
-            <td class="my-bookings-artifact">Thor's Hammer</td>
-            <td class="my-bookings-checkout">December 12th, 2018</td>
-            <td class="my-bookings-checkout">December 21st, 2018</td>
-            <td class="my-bookings-price-total">350 000.00 €</td>
+             <td class="my-bookings-artifact"><%= booking.artifact.name %></td>
+            <td class="my-bookings-checkout"><%= booking.check_out_date %></td>
+            <td class="my-bookings-checkout"><%= booking.return_date %></td>
+            <td class="my-bookings-price-total">WORK IN PROGRESS €</td>
           </tr>
-          <tr>
-            <td class="my-bookings-artifact">Zeus's Beard Comb</td>
-            <td class="my-bookings-checkout">January 7th, 2019</td>
-            <td class="my-bookings-checkout">March 1st, 2019</td>
-            <td class="my-bookings-price-total">550 000.00 €</td>
-          </tr>
-          <tr>
-            <td class="my-bookings-artifact">Samuri Armour</td>
-            <td class="my-bookings-checkout">December 1st, 2018</td>
-            <td class="my-bookings-checkout">December 7th, 2018</td>
-            <td class="my-bookings-price-total">150 000.00 €</td>
-          </tr>
-          <tr>
-            <td class="my-bookings-artifact">Thor's Hammer</td>
-            <td class="my-bookings-checkout">December 12th, 2018</td>
-            <td class="my-bookings-checkout">December 21st, 2018</td>
-            <td class="my-bookings-price-total">350 000.00 €</td>
-          </tr>
-        <% #end %>
+        <% end %>
       </table>
     </div>
   </div>
