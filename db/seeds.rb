@@ -92,7 +92,7 @@ puts '-' * 50
 ## seed conditions table form array
 puts "\nPopulating Conditions......"
 sleep 1
-conditions = ['perfect', 'like new', 'good', 'rustic', 'shows wear', 'ramshackle']
+conditions = ['mint', 'like new', 'good', 'rustic', 'shows wear', 'ramshackle']
 conditions.each do |condition|
   new_condition = Condition.new(name: condition)
   new_condition.save!
@@ -125,7 +125,7 @@ puts "\n              - Artifact Type in database: #{ArtifactType.count}!\n"
 ## seed time periods table form array
 puts "\nPopulating Time Periods......"
 sleep 1
-time_periods = ['middle ages', 'iron age', 'bronze age', 'renaissance', 'colonial times', 'pre-historic', 'industrial revolution', 'age of discovery', 'Victorian era']
+time_periods = ['middle ages', 'iron age', 'bronze age', 'renaissance', 'colonial times', 'pre-historic', 'industrial revolution', 'age of discovery', 'victorian era']
 time_periods.each do |time_period|
   new_time_period = TimePeriod.new(name: time_period)
   new_time_period.save!
@@ -166,49 +166,49 @@ sleep 1
 Artifact.create!([
   {
     name: "Winged Hussar's Armour",
-    hoto: "app/assets/images/hussar_armour.jpg",
-    time_period: TimePeriod.where(name: 'middle ages'),
-    cultural_origin: CulturalOrigin.where(name: 'western'),
-    artifact_type: ArtifactType.where(name: 'armour'),
-    condition: Condition.find(rand(1..6)),
+    photo: "hussar_armour.jpg",
+    time_period: TimePeriod.find_by_name('middle ages'),
+    cultural_origin: CulturalOrigin.find_by_name('western'),
+    artifact_type: ArtifactType.find_by_name('armour'),
+    condition: Condition.find_by_name('mint'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
-    photo: "app/assets/images/trench_knife.jpg",
-    time_period: TimePeriod.where(name: 'middle ages'),
-    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
-    artifact_type: ArtifactType.where(name: 'weapon'),
-    condition: Condition.find(rand(1..6)),
+    photo: "trench_knife.jpg",
+    time_period: TimePeriod.find_by_name('middle ages'),
+    cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
+    artifact_type: ArtifactType.find_by_name('weapon'),
+    condition: Condition.find_by_name('rustic'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "Napoleon Bonaparte's Gold Laurel Wreath",
-    photo: "app/assets/images/laurel_wreath.png",
-    time_period: TimePeriod.where(name: 'middle ages'),
-    cultural_origin: CulturalOrigin.where(name: 'western'),
-    artifact_type: ArtifactType.where(name: 'accessory'),
-    condition: Condition.find(rand(1..6)),
+    photo: "laurel_wreath.png",
+    time_period: TimePeriod.find_by_name('middle ages'),
+    cultural_origin: CulturalOrigin.find_by_name('western'),
+    artifact_type: ArtifactType.find_by_name('accessory'),
+    condition: Condition.find_by_name('good'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('gorthor@gmail.com')
   }, {
     name: "Samurai Armour",
-    photo: "app/assets/images/samurai.jpg",
-    time_period: TimePeriod.where(name: 'middle ages'),
-    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
-    artifact_type: ArtifactType.where(name: 'armour'),
-    condition: Condition.find(rand(1..6)),
+    photo: "samurai.jpg",
+    time_period: TimePeriod.find_by_name('middle ages'),
+    cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
+    artifact_type: ArtifactType.find_by_name('armour'),
+    condition: Condition.find_by_name('like new'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Terracotta Warrior/s",
-    photo: "app/assets/images/terracotta-warriors.jpg",
-    time_period: TimePeriod.where(name: 'middle ages'),
-    cultural_origin: CulturalOrigin.where(name: 'far-eastern'),
-    artifact_type: ArtifactType.where(name: 'skulpture'),
-    condition: Condition.find(rand(1..6)),
+    photo: "terracotta-warriors.jpg",
+    time_period: TimePeriod.find_by_name('middle ages'),
+    cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
+    artifact_type: ArtifactType.find_by_name('skulpture'),
+    condition: Condition.find_by_name('ramshackle'),
     price: (rand(5..7) * 5 * rand(223..230)),
-    user: User.all.sample
+    user: User.find_by_email('makena.hawley@gmail.com')
   }
 ])
 
