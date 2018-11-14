@@ -137,25 +137,28 @@ puts "\n              - Time Periods in database: #{TimePeriod.count}!\n"
 puts "\nPopulating Users......"
 sleep 1
 new_time_period = User.new(first_name: 'brian',
-                                 last_name: 'welch',
-                                 phone_number: '',
-                                 average_rating: 0.0,
-                                 email: 'myself@brianwelch.se',
-                                 password: 'brianbrian')
+                           last_name: 'welch',
+                           phone_number: '',
+                           average_rating: 0.0,
+                           email: 'myself@brianwelch.se',
+                           password: 'brianbrian',
+                           photo: 'https://kitt.lewagon.com/placeholder/users/brian-welch')
 new_time_period.save!
 new_time_period = User.new(first_name: 'beltrán',
-                                 last_name: 'Sainz de vicuña nowack',
-                                 phone_number: '',
-                                 average_rating: 0.0,
-                                 email: 'gorthor@gmail.com',
-                                 password: 'beltranbeltran')
+                           last_name: 'Sainz de vicuña nowack',
+                           phone_number: '',
+                           average_rating: 0.0,
+                           email: 'gorthor@gmail.com',
+                           password: 'beltranbeltran',
+                           photo: 'https://kitt.lewagon.com/placeholder/users/BSdVN')
 new_time_period.save!
 new_time_period = User.new(first_name: 'makena',
-                                 last_name: 'hawley',
-                                 phone_number: '',
-                                 average_rating: 0.0,
-                                 email: 'makena.hawley@gmail.com',
-                                 password: 'makenamakena')
+                           last_name: 'hawley',
+                           phone_number: '',
+                           average_rating: 0.0,
+                           email: 'makena.hawley@gmail.com',
+                           password: 'makenamakena',
+                           photo: 'https://kitt.lewagon.com/placeholder/users/Makenahawley')
 new_time_period.save!
 puts "\n              - Users in database: #{User.count}!\n"
 
