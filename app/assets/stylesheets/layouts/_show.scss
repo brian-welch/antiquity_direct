@@ -1,0 +1,15 @@
+.show-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px;
+  column-gap: 50px;
+}
+
+.show-layout-img {
+  max-width: 45vw;
+  max-height: 80vh;
+}
+
+.show-layout-column:first-child {
+  text-align: center;
+}
