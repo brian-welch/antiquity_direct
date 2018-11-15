@@ -1,4 +1,6 @@
-<div class="navbar-antiquities">
+<% extra_class = params[:action] == "home" ? "navbar-home" : ""%>
+<div class="navbar-antiquities <%= extra_class %>">
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-antiquities-brand" do %>
     <%= image_tag "logo.png", class: "" %>
