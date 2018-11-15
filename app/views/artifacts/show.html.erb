@@ -1,3 +1,45 @@
+<div class="show-layout">
+  <div class="show-layout-column">
+    <%= image_tag(@artifact.photo, class: "show-layout-img")%>
+  </div>
+  <div class="show-layout-column">
+    <h1><%= @artifact.name %></h1>
+    <h3><%= sell_price(@artifact.price) %> / day</h3>
+    <div class="show-border">
+      <h3>Description:</h3>
+      <!-- replace lorem below with @artifact.description  -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi! Nam magni aliquam ab error ea neque ratione sunt, cum assumenda, ducimus aperiam dolores dicta, hic ad!</p>
+      <ul>
+        <li>Origin: <%= @artifact.cultural_origin.name %></li>
+        <li>Time period: <%= @artifact.time_period.name %></li>
+        <li>Condition: <%= @artifact.condition.name %></li>
+      </ul>
+    </div>
+    <hr>
+    <h5 class="booking-heading">Book This Item!</h5>
+    <hr>
+
+    <% if user_signed_in? %>
+
+    <div class="col-xs-12" id="start-booking-form">
+      <%= render 'artifacts/booking_form' %>
+    </div>
+
+    <% else %>
+
+    <div class="button-center-box">
+      <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>
+
+
+
+
+
 
 
 <div class="container show-page-container">
@@ -26,15 +68,15 @@
 
       <% if user_signed_in? %>
 
-        <div class="col-xs-12" id="start-booking-form">
-          <%= render 'artifacts/booking_form' %>
-        </div>
+      <div class="col-xs-12" id="start-booking-form">
+        <%= render 'artifacts/booking_form' %>
+      </div>
 
       <% else %>
 
-        <div class="button-center-box">
-          <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
-        </div>
+      <div class="button-center-box">
+        <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
+      </div>
 
       <% end %>
 
