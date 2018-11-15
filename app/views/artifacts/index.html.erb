@@ -5,12 +5,15 @@
   <% @artifacts.each_with_index do |artifact, i| %>
 
     <div class="col-xs-12 col-sm-4 offset-sm-4">
-      <div class="card" style="background-image: url(<%= asset_path artifact.photo %>); width:300px; height:500px">
-        <h4><%= sell_price(artifact.price) %>/day</h4>
-        <%= link_to "", artifact_path(artifact), class: "card-link"%>
-      </div>
-      <h3><%= link_to artifact.name, artifact_path(artifact) %></h3>
-      <p><%= artifact.description %></p>
+
+      <%= link_to artifact_path(artifact), class: "card" do %>
+        <div class="card-image" style="background-image: url(<%= asset_path artifact.photo %>);">
+          <h4 class="card-price"><%= sell_price(artifact.price %> / day</h4>
+        </div>
+        <h3 class="blue-font"><%= artifact.name %></h3>
+        <!-- <p><%= artifact.description %></p> -->
+      <% end %>
+
     </div>
 
     <%= ((i + 1) % 3) == 0 ? "&nbsp;<hr>".html_safe : "" %>
