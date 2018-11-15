@@ -8,7 +8,7 @@
 
       <%= link_to artifact_path(artifact), class: "card" do %>
         <div class="card-image" style="background-image: url(<%= asset_path artifact.photo %>);">
-          <h4 class="card-price"><%= sell_price(artifact.price %> / day</h4>
+          <h4 class="card-price"><%= sell_price(artifact.price) %> / day</h4>
         </div>
         <h3 class="blue-font"><%= artifact.name %></h3>
         <!-- <p><%= artifact.description %></p> -->
