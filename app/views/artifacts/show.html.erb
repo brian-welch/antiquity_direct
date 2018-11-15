@@ -4,16 +4,17 @@
   </div>
   <div class="show-layout-column">
     <h1><%= @artifact.name %></h1>
-    <h3>$<%= @artifact.price %> /day</h3>
-    <h3>Description:</h3>
+    <h3>$<%= @artifact.price %> / day</h3>
+    <div class="show-border">
+      <h3>Description:</h3>
     <!-- replace lorem below with @artifact.description  -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi! Nam magni aliquam ab error ea neque ratione sunt, cum assumenda, ducimus aperiam dolores dicta, hic ad!</p>
-
-    <ul>
-      <li>Origin: <%= @artifact.cultural_origin.name %></li>
-      <li>Time period: <%= @artifact.time_period.name %></li>
-      <li>Condition: <%= @artifact.condition.name %></li>
-    </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi! Nam magni aliquam ab error ea neque ratione sunt, cum assumenda, ducimus aperiam dolores dicta, hic ad!</p>
+      <ul>
+        <li>Origin: <%= @artifact.cultural_origin.name %></li>
+        <li>Time period: <%= @artifact.time_period.name %></li>
+        <li>Condition: <%= @artifact.condition.name %></li>
+      </ul>
+    </div>
 
     <% if user_signed_in? %>
       <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
