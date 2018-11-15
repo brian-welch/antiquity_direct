@@ -18,70 +18,60 @@
     <hr>
     <h5 class="booking-heading">Book This Item!</h5>
     <hr>
-
     <% if user_signed_in? %>
-
     <div class="col-xs-12" id="start-booking-form">
       <%= render 'artifacts/booking_form' %>
     </div>
-
     <% else %>
-
     <div class="button-center-box">
       <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
     </div>
-
     <% end %>
-
   </div>
 </div>
 
 
-
-
-
-
-
-<div class="container show-page-container">
+<!-- <div class="container show-page-container">
   <div class="row">
-    <h1><%= @artifact.name %></h1>
+    <h1><%#= @artifact.name %></h1>
     <hr>
     <div class=" col-sm-6">
       <div class="photo-outer-container">
-        <%= image_tag(@artifact.photo, class: "")%>
+        <%#= image_tag(@artifact.photo, class: "")%>
       </div>
     </div>
     <div class="col-sm-6">
       <h3><%= sell_price(@artifact.price) %> /day</h3>
-      <h3>Description:</h3>
+      <h3>Description:</h3> -->
       <!-- replace lorem below with @artifact.description  -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi!</p>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi!</p>
       <ul>
-        <li>Origin: <%= @artifact.cultural_origin.name %></li>
-        <li>Time period: <%= @artifact.time_period.name %></li>
-        <li>Condition: <%= @artifact.condition.name %></li>
+        <li>Origin: <%#= @artifact.cultural_origin.name %></li>
+        <li>Time period: <%#= @artifact.time_period.name %></li>
+        <li>Condition: <%#= @artifact.condition.name %></li>
       </ul>
       <hr>
       <h4 class="booking-heading">Book This Item!</h4>
       <hr>
 
 
-      <% if user_signed_in? %>
+      <%# if user_signed_in? %>
 
       <div class="col-xs-12" id="start-booking-form">
-        <%= render 'artifacts/booking_form' %>
+        <%#= render 'artifacts/booking_form' %>
       </div>
 
-      <% else %>
+      <%# else %>
 
       <div class="button-center-box">
-        <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
+        <%#= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
       </div>
 
-      <% end %>
+      <%# end %>
 
 
 
     </div>
   </div>
 </div>
+ -->
