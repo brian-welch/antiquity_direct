@@ -1,12 +1,19 @@
 <%= simple_form_for [@booking] do |f| %>
 <%= f.error_notification %>
 
+<% if @booking.errors.any? %>
+  <div id="error_explanation">
+    <% @booking.errors.full_messages.each do |msg| %>
+      * <%= msg %> *
+    <% end %>
+  </div>
+<% end %>
 
-  <div class="form-input form-group">
+  <div class="form-input form-group check-out-form-fields">
     <label>From:</label><br>
     <%= f.date_select :check_out_date, class: 'form-control', label: "From:" %>
   </div>
-  <div class="form-input form-group">
+  <div class="form-input form-group return-out-form-fields">
     <label>To:</label><br>
     <%= f.date_select :return_date, class: 'form-control', label: "To:" %>
     <%= f.hidden_field :artifact_id, :value => @artifact.id %>
