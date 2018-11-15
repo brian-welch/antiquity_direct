@@ -13,13 +13,9 @@ class BookingsController < ApplicationController
       flash[:notice] = "Booking was successfully requested. Now awaiting approval."
       redirect_to dashboard_path
     else
-      redirect_to artifact_path(@artifact)
+      redirect_to artifact_path(@booking.artifact_id)
     end
   end
-
-  # def index
-  #   @bookings = Booking.all
-  # end
 
   private
 

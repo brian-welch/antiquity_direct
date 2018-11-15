@@ -1,35 +1,51 @@
-<div class="show-layout">
-  <div class="show-layout-column">
-    <%= image_tag(@artifact.photo, class: "show-layout-img")%>
-  </div>
-  <div class="show-layout-column">
+<div class="container show-page-container">
+  <div class="row">
     <h1><%= @artifact.name %></h1>
-    <h3>$<%= @artifact.price %> /day</h3>
-    <h3>Description:</h3>
-    <!-- replace lorem below with @artifact.description  -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi! Nam magni aliquam ab error ea neque ratione sunt, cum assumenda, ducimus aperiam dolores dicta, hic ad!</p>
-
-    <ul>
-      <li>Origin: <%= @artifact.cultural_origin.name %></li>
-      <li>Time period: <%= @artifact.time_period.name %></li>
-      <li>Condition: <%= @artifact.condition.name %></li>
-    </ul>
-
-    <% if user_signed_in? %>
-      <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="outline:red dotted 1px;">
-        <%= render 'shared/booking_form' %>
+    <hr>
+    <div class=" col-sm-6">
+      <div class="photo-outer-container">
+        <%= image_tag(@artifact.photo, class: "")%>
       </div>
-    <% else %>
-      <%= flash[:danger] = "Please log in to book." %>
-    <% end %>
+    </div>
+    <div class="col-sm-6">
+      <h3>$<%= @artifact.price %> /day</h3>
+      <h3>Description:</h3>
+      <!-- replace lorem below with @artifact.description  -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit temporibus sed, doloremque aliquid. Dolor dolorum magnam, nobis doloremque ullam vitae. Nobis, nulla. Officiis molestiae voluptas itaque ad, fuga eaque architecto incidunt exercitationem animi!</p>
+      <ul>
+        <li>Origin: <%= @artifact.cultural_origin.name %></li>
+        <li>Time period: <%= @artifact.time_period.name %></li>
+        <li>Condition: <%= @artifact.condition.name %></li>
+      </ul>
+      <hr>
+      <h4 class="booking-heading">Book This Item!</h4>
+      <hr>
+
+
+      <% if user_signed_in? %>
+
+        <div class="col-xs-12">
+          <%= render 'booking_form' %>
+        </div>
+
+      <% else %>
+
+        <div class="button-center-box">
+          <%= link_to "Log in to Book!", new_user_session_path, class: "btn-treehouse" %>
+        </div>
+
+      <% end %>
+
+
+
+    </div>
   </div>
 </div>
+<!-- NEED TO WORK ON CONTROLLER TO MAKE SURE FORM WORKS -->
 
-    <!-- NEED TO WORK ON CONTROLLER TO MAKE SURE FORM WORKS -->
-
-    <!-- simple form for booking -->
-    <!-- CONDITIONAL STATEMENT TO HIDE BOOKING FORM IF NOT LOGGED IN -->
+<!-- simple form for booking -->
+<!-- CONDITIONAL STATEMENT TO HIDE BOOKING FORM IF NOT LOGGED IN -->
 
 
 <!-- If you see this, then the first test of the 'new' form worked
- --><!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->
+--><!-- <p>Find me in app/views/artifacts/show.html.erb</p> -->

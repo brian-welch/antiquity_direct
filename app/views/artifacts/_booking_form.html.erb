@@ -1,0 +1,17 @@
+<%= simple_form_for [@booking] do |f| %>
+<%= f.error_notification %>
+
+
+  <div class="form-input form-group">
+    <label>From:</label><br>
+    <%= f.date_select :check_out_date, class: 'form-control', label: "From:" %>
+  </div>
+  <div class="form-input form-group">
+    <label>To:</label><br>
+    <%= f.date_select :return_date, class: 'form-control', label: "To:" %>
+    <%= f.hidden_field :artifact_id, :value => @artifact.id %>
+  </div>
+  <div class="button-center-box">
+    <%= f.submit "Send You Booking Request!", class: "btn-treehouse" %>
+  </div>
+<% end %>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Antiquity Direct</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,6 +16,7 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
+    <p class="alert"><%= alert %></p>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
@@ -20,4 +26,3 @@
 </html>
 
 
-<p class="alert"><%= alert %></p>
