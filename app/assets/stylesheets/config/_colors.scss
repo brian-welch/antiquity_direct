@@ -11,6 +11,15 @@ $tan: #dfd3c3;
 $brown: #c7b198;
 $white: #f0ece2;
 $dark-grey: #4C5B5C;
+$black: #1d1d1d;
+$gold: #8f7c4f;
+
+.parchment {
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(45deg,#efefef 25%,transparent 25%,transparent 75%,#efefef 75%,#efefef),-webkit-linear-gradient(45deg,#efefef 25%,transparent 25%,transparent 75%,#efefef 75%,#efefef);
+}
+
+
 
 .color-sample {
   width: 100px;
