@@ -13,3 +13,9 @@
 .show-layout-column:first-child {
   text-align: center;
 }
+
+.show-border {
+  border: 1px solid;
+  border-color: $yellow;
+  padding-left: 5px;
+}
