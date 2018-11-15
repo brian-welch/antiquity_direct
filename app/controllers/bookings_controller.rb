@@ -1,30 +1,26 @@
 class BookingsController < ApplicationController
-  # check if 'def new' works as intended
+
   def new
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    # @artifact = Artifact.find(params[:artifact_id])
-    # @booking.artifact = @artifact
     @booking.user = current_user
+    @booking.booking_pending = true
     if @booking.save
       flash[:notice] = "Booking was successfully requested. Now awaiting approval."
       redirect_to dashboard_path
     else
-      redirect_to artifact_path(@artifact)
+      @artifact = @booking.artifact
+      render "artifacts/show"
     end
-  end
 
-  # def index
-  #   @bookings = Booking.all
-  # end
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:check_out_date, :return_date, :artifact_id, booking_pending: true)
+    params.require(:booking).permit(:check_out_date, :return_date, :artifact_id)
   end
 end
-

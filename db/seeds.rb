@@ -172,7 +172,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('armour'),
     condition: Condition.find_by_name('mint'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "U.S. Model 1918 Mark I Trench Knife",
@@ -181,7 +181,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('weapon'),
     condition: Condition.find_by_name('rustic'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "Napoléon Bonaparte's Gold Laurel Wreath",
@@ -190,7 +190,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('accessory'),
     condition: Condition.find_by_name('good'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Samurai Armour",
@@ -199,7 +199,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('armour'),
     condition: Condition.find_by_name('like new'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Terracotta Warriors",
@@ -208,7 +208,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
     artifact_type: ArtifactType.find_by_name('skulpture'),
     condition: Condition.find_by_name('ramshackle'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('makena.hawley@gmail.com')
     }, {
     name: "Leonardo Da Vinci's Sketch Book",
@@ -217,7 +217,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('roman'),
     artifact_type: ArtifactType.find_by_name('book'),
     condition: Condition.find_by_name('rustic'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "King Arthur's Crown",
@@ -226,7 +226,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('accessory'),
     condition: Condition.find_by_name('like new'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('makena.hawley@gmail.com')
     }, {
     name: "Genuine Wooly Mammoth Skeleton",
@@ -235,7 +235,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('global'),
     artifact_type: ArtifactType.find_by_name('accessory'),
     condition: Condition.find_by_name('good'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Traditional Māori Boat",
@@ -244,7 +244,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('australatian'),
     artifact_type: ArtifactType.find_by_name('transportation'),
     condition: Condition.find_by_name('shows wear'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Thor's Hammer",
@@ -253,7 +253,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('viking'),
     artifact_type: ArtifactType.find_by_name('weapon'),
     condition: Condition.find_by_name('mint'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('myself@brianwelch.se')
     }, {
     name: "Shrunken Head Collection",
@@ -262,7 +262,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('amazonian'),
     artifact_type: ArtifactType.find_by_name('accessory'),
     condition: Condition.find_by_name('ramshackle'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('gorthor@gmail.com')
     }, {
     name: "Full Size Egyptian Mummy",
@@ -271,7 +271,7 @@ Artifact.create!(
     cultural_origin: CulturalOrigin.find_by_name('ancient egyptian'),
     artifact_type: ArtifactType.find_by_name('skulpture'),
     condition: Condition.find_by_name('rustic'),
-    price: (rand(5..7) * 5 * rand(223..230)),
+    price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('makena.hawley@gmail.com')
     }
   ]
@@ -298,8 +298,8 @@ user_emails = ["makena.hawley@gmail.com",
                "gorthor@gmail.com",
                "myself@brianwelch.se"]
 
-30.times do
-  year = ['2018', '2019'][rand(0..1)]
+18.times do
+  year = ['2019', '2020'][rand(0..1)]
   month_one = rand(1..5)
   month_two = rand(7..12)
   day = rand(1..28)
