@@ -46,13 +46,44 @@
 }
 
 /* Navbar link */
+// Attempt to try to add effect to hover in navbar 1/4
+
 .navbar-antiquities-link {
   color: $yellow;
   font-size: 25px;
+  text-decoration: none;
+  position: relative;
 }
+
+// Attempt to try to add effect to hover in navbar 2/4
+
 .navbar-antiquities-link:hover {
   color: $tan;
   text-decoration: none;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+// Attempt to try to add effect to hover in navbar 3/4
+.navbar-antiquities-link:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $tan;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+// Attempt to try to add effect to hover in navbar 4/4
+.navbar-antiquities-link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 /* Dropdown menu */
