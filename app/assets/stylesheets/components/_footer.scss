@@ -5,7 +5,7 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: white;
+  color: $white;
 }
 .footer-links {
   display: flex;
@@ -21,6 +21,7 @@
 .footer-links a:hover {
   opacity: 1;
   color: $yellow;
+  font-size: 30px;
 }
 .footer .fa-heart {
   color: #D23333;
