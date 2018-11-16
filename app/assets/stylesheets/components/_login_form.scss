@@ -2,6 +2,10 @@
   max-width: 400px;
   margin: 50px auto;
 
+  input {
+    border-radius: 30px;
+  }
+
   .text-muted {
     color: $gray;
   }
