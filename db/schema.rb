@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_101728) do
+ActiveRecord::Schema.define(version: 2018_11_16_132453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_101728) do
     t.date "return_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "booking_pending", default: false
+    t.boolean "booking_pending", default: true
     t.boolean "booking_confirmed", default: false
     t.boolean "booking_declined", default: false
     t.index ["artifact_id"], name: "index_bookings_on_artifact_id"
