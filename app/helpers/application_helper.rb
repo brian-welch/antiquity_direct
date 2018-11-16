@@ -19,12 +19,12 @@ module ApplicationHelper
   end
 
   def sell_price(price)
-    Object.new.extend(ActionView::Helpers::NumberHelper).number_to_currency(price, unit: "€ ", separator: ".", delimiter: " ")
+    Object.new.extend(ActionView::Helpers::NumberHelper).number_to_currency(price, locale: :fr, unit: "€ ", separator: ".", delimiter: " ", format: "%n %u")
   end
 
   def booking_cost(art_id, out, retur)
     n = @artifacts.find(art_id).price * (retur - out).to_i
-    Object.new.extend(ActionView::Helpers::NumberHelper).number_to_currency(n, unit: "€ ", separator: ".", delimiter: " ")
+    Object.new.extend(ActionView::Helpers::NumberHelper).number_to_currency(n, locale: :fr, unit: "€ ", separator: ".", delimiter: " ", format: "%n %u")
   end
 
   def row_status(confirmed, declined)
