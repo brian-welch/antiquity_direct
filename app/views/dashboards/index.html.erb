@@ -58,8 +58,9 @@
             <td class="other-bookings-status">
               <div class="customer-booking-button-controlbox">
                 <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "confirmed"%>
-                  <%= form_tag('/booking_status') do -%>
+                  <%= form_tag('/dashboard') do -%>
                     <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <%=  hidden_field_tag 'status', 'confirmed' %>
                     <button class="customer-booking-confirm" type="submit">
                       <i class="far fa-check-circle"></i><%#= booking_status(conf, decl) %>
                     </button>
@@ -67,8 +68,9 @@
                 <% end %>
                 <!-- &nbsp;&nbsp; -->
                 <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "declined"%>
-                  <%= form_tag('/booking_status') do -%>
+                  <%= form_tag('/dashboard') do -%>
                     <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <%=  hidden_field_tag 'status', 'declined' %>
                     <button class="customer-booking-decline" type="submit">
                       <i class="fas fa-ban"></i><%#= booking_status(conf, decl) %>
                     </button>
