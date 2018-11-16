@@ -30,59 +30,50 @@ wave = Enumerator.new do |e|
   end
 end
 
-## initiating facy status message
-# progress = Thread.new do
-#   loop do
-#     printf("\r%s", wave.next)
-#     sleep(0.05)
-#   end
-# end
 
 ## destroying all tables
 
 puts 'Destroying all Bookings in database.....'
-# sleep 2
+
 Booking.destroy_all
 puts " All Bookings deleted!\n\n"
 
 puts "\nDestroying all Artifacts in database....."
 
-# sleep 1
+
 Artifact.destroy_all
 puts " All Artifacts deleted!\n\n"
 
 
 puts 'Destroying all Users in database.....'
-# sleep 1
+
 User.destroy_all
 puts " All Users deleted!\n\n"
 
 
 puts 'Destroying all Conditions in database.....'
-# sleep 1
+
 Condition.destroy_all
 puts " All Conditions deleted!\n\n"
 
 
 puts 'Destroying all Cultural Origins in database.....'
-# sleep 1
+
 CulturalOrigin.destroy_all
 puts " All Cultural Origins deleted!\n\n"
 
 
 puts 'Destroying all Artifact Types in database.....'
-# sleep 1
+
 ArtifactType.destroy_all
 puts " All Artifact Types deleted!\n\n"
 
 
 puts 'Destroying all Time Periods in database.....'
-# sleep 1
+
 TimePeriod.destroy_all
 puts " All Time Periods deleted!\n\n"
 
-## kills status message operation
-# progress.exit
 
 ## adds border for asthetics
 puts '-' * 50
@@ -90,7 +81,7 @@ puts '-' * 50
 
 ## seed conditions table form array
 puts "\nPopulating Conditions......"
-# sleep 1
+
 conditions = ['mint', 'like new', 'good', 'rustic', 'shows wear', 'ramshackle']
 conditions.each do |condition|
   new_condition = Condition.new(name: condition)
@@ -101,7 +92,7 @@ puts "\n              - Conditions in database: #{Condition.count}!\n"
 
 ## seed cultural origins table form array
 puts "\nPopulating Cultural Origins......"
-# sleep 1
+
 cultural_origins = ['amazonian', 'ancient greek', 'roman', 'chinese dynastic', 'western', 'far-eastern', 'viking', 'mesopotamian', 'babylonian', 'ancient egyptian', 'australatian', 'polynesian', 'inowit', 'global']
 cultural_origins.each do |cultural_origin|
   new_cultural_origin = CulturalOrigin.new(name: cultural_origin)
@@ -112,7 +103,7 @@ puts "\n              - Cultural cultural_origins in database: #{CulturalOrigin.
 
 ## seed artifact types table form array
 puts "\nPopulating Artifact Types......"
-# sleep 1
+
 artifact_types = ['armour', 'weapon', 'book', 'scroll', 'painting', 'toy', 'map', 'invention', 'clothing', 'sculpture', 'building', 'accessory','transportation']
 artifact_types.each do |artifact_type|
   new_artifact_type = ArtifactType.new(name: artifact_type)
@@ -123,7 +114,7 @@ puts "\n              - Artifact Type in database: #{ArtifactType.count}!\n"
 
 ## seed time periods table form array
 puts "\nPopulating Time Periods......"
-# sleep 1
+
 time_periods = ['middle ages', 'iron age', 'bronze age', 'renaissance', 'colonial times', 'pre-historic', 'industrial revolution', 'age of discovery', 'victorian era', 'ancient era']
 time_periods.each do |time_period|
   new_time_period = TimePeriod.new(name: time_period)
@@ -134,7 +125,7 @@ puts "\n              - Time Periods in database: #{TimePeriod.count}!\n"
 
 ## seed users table form array
 puts "\nPopulating Users......"
-# sleep 1
+
 User.create(first_name: 'brian',
          last_name: 'welch',
          phone_number: '+46 734 33 32 32',
@@ -169,7 +160,7 @@ puts "\n              - Users in database: #{User.count}!\n"
 
 ## seed artifacts table form array
 puts "\nPopulating Artifacts......"
-# sleep 1
+
 Artifact.create!(
   [
     {
@@ -213,7 +204,7 @@ Artifact.create!(
     photo: "terracotta-warriors.jpg",
     time_period: TimePeriod.find_by_name('middle ages'),
     cultural_origin: CulturalOrigin.find_by_name('far-eastern'),
-    artifact_type: ArtifactType.find_by_name('skulpture'),
+    artifact_type: ArtifactType.find_by_name('sculpture'),
     condition: Condition.find_by_name('ramshackle'),
     price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('makena.hawley@gmail.com')
@@ -276,7 +267,7 @@ Artifact.create!(
     photo: "https://r.hswstatic.com/w_907/gif/mummysarcophagus-prisma-uig-getty.jpg",
     time_period: TimePeriod.find_by_name('ancient era'),
     cultural_origin: CulturalOrigin.find_by_name('ancient egyptian'),
-    artifact_type: ArtifactType.find_by_name('skulpture'),
+    artifact_type: ArtifactType.find_by_name('sculpture'),
     condition: Condition.find_by_name('rustic'),
     price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('makena.hawley@gmail.com')
@@ -285,7 +276,7 @@ Artifact.create!(
     photo: "https://i.pinimg.com/originals/0c/42/1a/0c421a1df75877fb828d3183719aea00.jpg",
     time_period: TimePeriod.find_by_name('ancient era'),
     cultural_origin: CulturalOrigin.find_by_name('western'),
-    artifact_type: ArtifactType.find_by_name('skulpture'),
+    artifact_type: ArtifactType.find_by_name('sculpture'),
     condition: Condition.find_by_name('mint'),
     price: (rand(5..7) * 5 * rand(32..43)),
     user: User.find_by_email('indiana.jones@crusades.com')
@@ -316,7 +307,7 @@ puts "\n              - Artifacts in database: #{Artifact.count}!\n"
 
 
 puts "\nPopulating Bookings......"
-# sleep 1
+
 artifact_names = ["Winged Hussar's Armour",
                   "U.S. Model 1918 Mark I Trench Knife",
                   "Napoléon Bonaparte's Gold Laurel Wreath",
