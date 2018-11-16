@@ -5,7 +5,7 @@
 
 // Change my booking button color if booking confirmed
 myBookingStatusArray = document.querySelectorAll('.my-booking-status');
-myBookingStatusArray.forEach((element) => {
+myBookingStatusArray.forEach(function(element) {
   if (element.innerText === "confirmed"){
     console.log('fire!')
     element.classList.add('my-confirmed-booking');
@@ -14,7 +14,7 @@ myBookingStatusArray.forEach((element) => {
 
 
 myBookingStatusArray = document.querySelectorAll('.my-booking-status');
-myBookingStatusArray.forEach((element) => {
+myBookingStatusArray.forEach(function(element) {
   if (element.innerText === "declined"){
     element.classList.add('my-declined-booking');
   };
