@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
       redirect_to dashboard_path
     else
       @artifact = @booking.artifact
-      render "artifacts/show"
+      render "artifacts/show" # , anchor: "#start-booking-form"
     end
 
   end
