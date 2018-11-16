@@ -10,7 +10,7 @@
         ["#{artifact_type.name} (#{artifact_type.artifacts.count})", artifact_type.id]
       end
     end %>
-    <%= select_tag "artifact_type_id", options_for_select(options.compact, params[:artifact_type_id]), include_blank: "All types" %>
+    <%= select_tag "artifact_type_id", options_for_select(options.compact, params[:artifact_type_id]), include_blank: "All categories" %>
     <button id="artifact_filter_button" type="submit">Filter</button>
   </form>
 

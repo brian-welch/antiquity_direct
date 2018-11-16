@@ -113,7 +113,7 @@ puts "\n              - Cultural cultural_origins in database: #{CulturalOrigin.
 ## seed artifact types table form array
 puts "\nPopulating Artifact Types......"
 # sleep 1
-artifact_types = ['armour', 'weapon', 'book', 'scroll', 'painting', 'toy', 'map', 'invention', 'clothing', 'skulpture', 'building', 'accessory','transportation']
+artifact_types = ['armour', 'weapon', 'book', 'scroll', 'painting', 'toy', 'map', 'invention', 'clothing', 'sculpture', 'building', 'accessory','transportation']
 artifact_types.each do |artifact_type|
   new_artifact_type = ArtifactType.new(name: artifact_type)
   new_artifact_type.save!
