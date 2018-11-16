@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
 
     @customer_bookings = []
 
-    Booking.all.each do |booking|
+    Booking.order(:check_out_date).each do |booking|
       unless @my_bookings.include?(booking)
         @customer_bookings << booking
       end

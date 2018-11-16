@@ -22,7 +22,7 @@
       <h3>My Personal Bookings</h3>
       <table class="table">
           <tr><th>Status</th><th>Artifact</th><th>Check Out Date</th><th>Return Date</th><th>Total Price</th></tr>
-        <% @my_bookings.each do |booking| %>
+        <% @my_bookings.order(:check_out_date).each do |booking| %>
         <%  art_id = booking.artifact_id
             out = booking.check_out_date
             retur = booking.return_date
