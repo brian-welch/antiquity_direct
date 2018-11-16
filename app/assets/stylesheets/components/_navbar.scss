@@ -20,7 +20,13 @@
   position: absolute;
   top: 0px;
   background: transparent;
+  width: 100%;
+  padding-left: 0;
 
+  .navbar-antiquities-brand {
+    background-color: $blue;
+    padding: 0 30px;
+  }
 }
 
 /* Logo */

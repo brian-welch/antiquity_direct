@@ -6,7 +6,13 @@
 
 .base-line-content {
   max-width: 60%;
-  margin: 0 auto
+  margin: auto;
+    h1 {
+      margin: 18px;
+    }
+    h3 {
+      margin: 18px;
+    }
 }
 
 .blue-font {

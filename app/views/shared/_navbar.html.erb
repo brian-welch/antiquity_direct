@@ -13,8 +13,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Artifacts for Rent", artifacts_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
-      <%= link_to "Rent out your Artifact", new_artifact_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
+      <%= link_to "Rent an Artifact", artifacts_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
+      <%= link_to "List your Artifact", new_artifact_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-antiquities-item">
@@ -47,8 +47,8 @@
       <% #raise %>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Artifacts for Rent", artifacts_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
-      <%= link_to "Rent out your Artifact", new_artifact_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
+      <%= link_to "Rent an Artifact", artifacts_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
+      <%= link_to "List your Artifact", new_artifact_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
       <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-antiquities-item navbar-antiquities-link" %>
     <% end %>
