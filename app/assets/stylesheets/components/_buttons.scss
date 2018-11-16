@@ -1,6 +1,6 @@
 
 .btn-treehouse {
-  color: white;
+  color: $tan;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
@@ -9,9 +9,9 @@
 }
 .btn-treehouse:hover {
   opacity: 1;
-  background: #3ac162;
+  background: $yellow;
   text-decoration: none;
-  color: white;
+  color: $blue;
 }
 
 // (other button in case we like this better for the home page)
