@@ -14,6 +14,12 @@
         <li class="list-group-item"><i class="fas fa-envelope-square"></i> <%= @current_user.email %></li>
         <li class="list-group-item"><i class="fas fa-phone-square"></i><%= @current_user.phone_number %></li>
         <hr>
+        <li class="list-group-item"><i class="fas fa-th"></i> Inventory Count: <span><%= @current_user.artifacts.count %></span></li>
+        <hr>
+        <li class="list-group-item"><i class="far fa-arrow-alt-circle-right"></i> Customer Bookings: <span><%= @customer_bookings.count %></span></li>
+        <li class="list-group-item list-group-subitem"><i class="far fa-question-circle"></i>Pending: <span><%= @customer_bookings_pending %></span></li>
+        <li class="list-group-item list-group-subitem"><i class="far fa-check-circle"></i>Confirmed: <span><%= @customer_bookings_confirmed %></span></li>
+        <li class="list-group-item list-group-subitem"><i class="fas fa-ban"></i>Declined: <span><%= @customer_bookings_declined %></span></li>
 
       </ul>
     </div>
@@ -37,6 +43,7 @@
           </tr>
         <% end %>
       </table>
+      <% # raise %>
     </div>
   </div>
 </div>
@@ -98,9 +105,12 @@
               <%= booking_cost(art_id, out, retur) %>
             </td>
           </tr>
-          <% #raise %>
+          <% # raise %>
         <% end %>
       </table>
     </div>
   <!-- </div> -->
 </div>
+
+
+<%#= @test.count  %>
