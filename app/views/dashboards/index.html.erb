@@ -62,14 +62,14 @@
                 <%= form_tag('/booking_status') do -%>
                   <%=  hidden_field_tag 'booking_id', booking.id %>
                   <button class="customer-booking-confirm" type="submit">
-                    confirm<%#= booking_status(conf, decl) %>
+                    <i class="far fa-check-circle"></i><%#= booking_status(conf, decl) %>
                   </button>
                 <% end -%>
                 <!-- &nbsp;&nbsp; -->
                 <%= form_tag('/booking_status') do -%>
                   <%=  hidden_field_tag 'booking_id', booking.id %>
                   <button class="customer-booking-decline" type="submit">
-                    decline<%#= booking_status(conf, decl) %>
+                    <i class="fas fa-ban"></i><%#= booking_status(conf, decl) %>
                   </button>
                 <% end -%>
 

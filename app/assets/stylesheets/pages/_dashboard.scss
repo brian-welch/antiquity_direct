@@ -126,14 +126,16 @@ th {
 }
 
 .my-confirmed-booking, .customer-booking-confirm {
-  background-color: rgba(75, 141, 188, 0.5);
+  color: white;
+  background-color: rgba(75, 141, 188, 1);
   box-shadow: 0 0 0 1px rgba(75, 141, 188, 1);
   border-radius: 2px;
 }
 
 
 .my-declined-booking, .customer-booking-decline {
-  background-color: rgba(219, 87, 87, 0.5);
+  color: white;
+  background-color: rgba(219, 87, 87, 1);
   box-shadow: 0 0 0 1px rgba(219, 87, 87, 1);
   border-radius: 2px;
 }
