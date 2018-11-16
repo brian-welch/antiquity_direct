@@ -300,7 +300,7 @@ Artifact.create!(
     user: User.find_by_email('indiana.jones@crusades.com')
     }, {
     name: "The Cross of Coronado",
-    photo: "hhttps://c1.staticflickr.com/6/5022/5676418730_ea97850bcf_b.jpg",
+    photo: "https://c1.staticflickr.com/6/5022/5676418730_ea97850bcf_b.jpg",
     time_period: TimePeriod.find_by_name('ancient era'),
     cultural_origin: CulturalOrigin.find_by_name('western'),
     artifact_type: ArtifactType.find_by_name('accessory'),
