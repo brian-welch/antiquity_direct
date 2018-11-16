@@ -29,7 +29,7 @@
             conf = booking.booking_confirmed
             decl = booking.booking_declined %>
           <tr>
-            <td class="my-bookings-status"><span class="booking-status"><%= booking_status(conf, decl) %></span></td>
+            <td class="my-bookings-status"><span class="my-booking-status"><%= booking_status(conf, decl) %></span></td>
             <td class="my-bookings-artifact"><%= booking.artifact.name %></td>
             <td class="my-bookings-checkout"><%= booking.check_out_date %></td>
             <td class="my-bookings-checkout"><%= booking.return_date %></td>

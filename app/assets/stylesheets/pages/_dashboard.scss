@@ -52,6 +52,9 @@
 }
 
 .user-has-booked {
+  span {
+    padding: 3px 5px;
+  }
 }
 
 .others-have-booked {
@@ -108,5 +111,14 @@ th {
   }
 }
 
+.my-booking-status {
+  background-color: rgba(255, 182, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 182, 0, 1);
+  border-radius: 1px;
+}
 
+.my-confirmed-booking {
+  background-color: rgba(75, 141, 188, 0.5);
+  box-shadow: 0 0 0 1px rgba(75, 141, 188, 1);
+}
 
