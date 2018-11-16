@@ -22,14 +22,14 @@
       <h3>My Personal Bookings</h3>
       <table class="table">
           <tr><th>Status</th><th>Artifact</th><th>Check Out Date</th><th>Return Date</th><th>Total Price</th></tr>
-        <% @my_bookings.each do |booking| %>
+        <% @my_bookings.order(:check_out_date).each do |booking| %>
         <%  art_id = booking.artifact_id
             out = booking.check_out_date
             retur = booking.return_date
             conf = booking.booking_confirmed
             decl = booking.booking_declined %>
           <tr>
-            <td class="my-bookings-status"><span class="booking-status"><%= booking_status(conf, decl) %></span></td>
+            <td class="my-bookings-status"><span class="my-booking-status"><%= booking_status(conf, decl) %></span></td>
             <td class="my-bookings-artifact"><%= booking.artifact.name %></td>
             <td class="my-bookings-checkout"><%= booking.check_out_date %></td>
             <td class="my-bookings-checkout"><%= booking.return_date %></td>
@@ -40,34 +40,59 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
+<hr>
+<div class="container dashboard-container">
+  <!-- <div class="row"> -->
     <div class="col-xs-12 bottom-block">
+      <h3>Customer Bookings</h3>
       <table class="table">
-          <tr><th>Status</th><th>Artifact</th><th>Customer Name</th><th>Customer Email</th><th>Check Out / Return Date</th><th>Total Price</th></tr>
+          <tr><th>Status</th><th>Artifact</th><!-- <th>Customer Name</th> --><th>Customer Email</th><th>Check Out / Return Date</th><th>Total Price</th></tr>
         <% @customer_bookings.each do |booking| %>
           <% art_id = booking.artifact_id
             out = booking.check_out_date
             retur = booking.return_date
-            conf = booking.booking_confirmed
-            decl = booking.booking_declined
+            row_class = row_status(booking.booking_confirmed, booking.booking_declined)
 
             %>
-          <tr>
+          <tr class="<%= row_class %>" >
             <td class="other-bookings-status">
-              <%= booking_status(conf, decl) %>
+              <div class="customer-booking-button-controlbox">
+                <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "confirmed"%>
+                  <%= form_tag('/dashboard') do -%>
+                    <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <%=  hidden_field_tag 'status', 'confirmed' %>
+                    <button class="customer-booking-confirm" type="submit">
+                      <i class="far fa-check-circle"></i><%#= booking_status(conf, decl) %>
+                    </button>
+                  <% end -%>
+                <% end %>
+                <!-- &nbsp;&nbsp; -->
+                <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "declined"%>
+                  <%= form_tag('/dashboard') do -%>
+                    <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <%=  hidden_field_tag 'status', 'declined' %>
+                    <button class="customer-booking-decline" type="submit">
+                      <i class="fas fa-ban"></i><%#= booking_status(conf, decl) %>
+                    </button>
+                  <% end -%>
+                <% end %>
+
+              </div>
+
+
+
             </td>
             <td class="other-bookings-artifact">
               <%= booking.artifact.name %>
             </td>
-            <td class="other-bookings-customer">
+            <!-- <td class="other-bookings-customer">
               <%= booking.user.first_name %> <%= booking.user.last_name %>
-            </td>
+            </td> -->
             <td class="other-bookings-email">
               <%= booking.user.email %>
             </td>
             <td class="other-bookings-checkout">
-              <%= booking.check_out_date %> / <%= booking.return_date %>
+              out: <%= booking.check_out_date %><br>in: <%= booking.return_date %>
             </td>
             <td class="other-bookings-price-total">
               <%= booking_cost(art_id, out, retur) %>
@@ -77,5 +102,5 @@
         <% end %>
       </table>
     </div>
-  </div>
+  <!-- </div> -->
 </div>

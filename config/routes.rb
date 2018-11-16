@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   resources :artifacts, only: [:index, :show, :new, :create]
   resources :bookings, only: [ :create ]
-  # post 'bookings#start-booking-form', to: 'bookings#create'
+
 
   get 'artifacts/:id/contact', to: 'contacts#new'
   post 'contacts', to: 'contacts#create'
   get 'dashboard', to: 'dashboards#index', as: "dashboard"
+  post 'dashboard', to: 'dashboards#create'
 end
 
