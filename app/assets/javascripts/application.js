@@ -19,3 +19,17 @@ myBookingStatusArray.forEach((element) => {
     element.classList.add('my-declined-booking');
   };
 });
+
+
+// Artifacts index filtering with select
+
+artifact_filter_form = document.querySelector("#artifact_filter");
+artifact_filter_select = document.querySelector('#artifact_type_id');
+
+if (artifact_filter_form && artifact_filter_select) {
+  document.querySelector("#artifact_filter_button").remove();
+
+  artifact_filter_select.addEventListener("change", function(){
+    artifact_filter_form.submit();
+  })
+}
