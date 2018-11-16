@@ -1,6 +1,19 @@
 
 <div class="container">
   <h1>Discover your Artifact</h1>
+
+  <form id="artifact_filter">
+    <% options = @artifact_types.map do |artifact_type|
+      if artifact_type.artifacts.count == 0
+        nil
+      else
+        ["#{artifact_type.name} (#{artifact_type.artifacts.count})", artifact_type.id]
+      end
+    end %>
+    <%= select_tag "artifact_type_id", options_for_select(options.compact, params[:artifact_type_id]), include_blank: "All types" %>
+    <button id="artifact_filter_button" type="submit">Filter</button>
+  </form>
+
   <div class="row">
   <% @artifacts.each_with_index do |artifact, i| %>
 

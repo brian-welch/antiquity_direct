@@ -4,7 +4,12 @@ class ArtifactsController < ApplicationController
 
   def index
     # write code (display list of all artifacts from db -- Assign to instance variable)
-    @artifacts = Artifact.all
+    @artifact_types = ArtifactType.all.order(name: :asc)
+    if params[:artifact_type_id].present?
+      @artifacts = Artifact.where(artifact_type_id: params[:artifact_type_id])
+    else
+      @artifacts = Artifact.all
+    end
   end
 
   def show
