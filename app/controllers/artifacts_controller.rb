@@ -24,7 +24,7 @@ class ArtifactsController < ApplicationController
 
   def create
     @artifact = Artifact.new(artifact_params)
-
+    @artifact.user = current_user
     if @artifact.save
       redirect_to @artifact
     else
