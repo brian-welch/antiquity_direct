@@ -4,3 +4,15 @@
 // @import "profile";
 // @import "map";
 @import "show";
+
+#artifact_filter {
+  padding: 7.5px 0px 10px 0px;
+  border-top: 1px solid $yellow;
+}
+
+#artifact_type_id {
+
+  background: transparent;
+  border: 0;
+  padding: 5px;
+}
