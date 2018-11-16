@@ -146,6 +146,18 @@ th {
 
 .customer-booking-button-controlbox {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0 !important;
 }
+
+
+
+.confirmed-row {
+  background-color: rgba(1,100,255,0.17);
+}
+
+.declined-row {
+  background-color: rgba(255,0,0,0.07);
+}
+
+

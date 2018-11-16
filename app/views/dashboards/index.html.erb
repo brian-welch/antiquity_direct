@@ -51,27 +51,29 @@
           <% art_id = booking.artifact_id
             out = booking.check_out_date
             retur = booking.return_date
-            conf = booking.booking_confirmed
-            decl = booking.booking_declined
+            row_class = row_status(booking.booking_confirmed, booking.booking_declined)
 
             %>
-          <tr>
+          <tr class="<%= row_class %>" >
             <td class="other-bookings-status">
               <div class="customer-booking-button-controlbox">
-
-                <%= form_tag('/booking_status') do -%>
-                  <%=  hidden_field_tag 'booking_id', booking.id %>
-                  <button class="customer-booking-confirm" type="submit">
-                    <i class="far fa-check-circle"></i><%#= booking_status(conf, decl) %>
-                  </button>
-                <% end -%>
+                <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "confirmed"%>
+                  <%= form_tag('/booking_status') do -%>
+                    <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <button class="customer-booking-confirm" type="submit">
+                      <i class="far fa-check-circle"></i><%#= booking_status(conf, decl) %>
+                    </button>
+                  <% end -%>
+                <% end %>
                 <!-- &nbsp;&nbsp; -->
-                <%= form_tag('/booking_status') do -%>
-                  <%=  hidden_field_tag 'booking_id', booking.id %>
-                  <button class="customer-booking-decline" type="submit">
-                    <i class="fas fa-ban"></i><%#= booking_status(conf, decl) %>
-                  </button>
-                <% end -%>
+                <% unless booking_status(booking.booking_confirmed, booking.booking_declined) == "declined"%>
+                  <%= form_tag('/booking_status') do -%>
+                    <%=  hidden_field_tag 'booking_id', booking.id %>
+                    <button class="customer-booking-decline" type="submit">
+                      <i class="fas fa-ban"></i><%#= booking_status(conf, decl) %>
+                    </button>
+                  <% end -%>
+                <% end %>
 
               </div>
 
