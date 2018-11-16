@@ -15,6 +15,9 @@
     margin-bottom: -99999px;
     padding-bottom: 99999px;
   }
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .dashboard-table {
@@ -111,14 +114,36 @@ th {
   }
 }
 
+.bottom-block {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 .my-booking-status {
   background-color: rgba(255, 182, 0, 0.3);
   box-shadow: 0 0 0 1px rgba(255, 182, 0, 1);
   border-radius: 1px;
 }
 
-.my-confirmed-booking {
+.my-confirmed-booking, .customer-booking-confirm {
   background-color: rgba(75, 141, 188, 0.5);
   box-shadow: 0 0 0 1px rgba(75, 141, 188, 1);
+  border-radius: 2px;
 }
 
+
+.my-declined-booking, .customer-booking-decline {
+  background-color: rgba(219, 87, 87, 0.5);
+  box-shadow: 0 0 0 1px rgba(219, 87, 87, 1);
+  border-radius: 2px;
+}
+
+.other-bookings-checkout {
+  font-size: 0.8em;
+}
+
+.customer-booking-button-controlbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 !important;
+}

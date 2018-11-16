@@ -40,11 +40,13 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
+<hr>
+<div class="container dashboard-container">
+  <!-- <div class="row"> -->
     <div class="col-xs-12 bottom-block">
+      <h3>Customer Bookings</h3>
       <table class="table">
-          <tr><th>Status</th><th>Artifact</th><th>Customer Name</th><th>Customer Email</th><th>Check Out / Return Date</th><th>Total Price</th></tr>
+          <tr><th>Status</th><th>Artifact</th><!-- <th>Customer Name</th> --><th>Customer Email</th><th>Check Out / Return Date</th><th>Total Price</th></tr>
         <% @customer_bookings.each do |booking| %>
           <% art_id = booking.artifact_id
             out = booking.check_out_date
@@ -55,19 +57,38 @@
             %>
           <tr>
             <td class="other-bookings-status">
-              <%= booking_status(conf, decl) %>
+              <div class="customer-booking-button-controlbox">
+
+                <%= form_tag('/booking_status') do -%>
+                  <%=  hidden_field_tag 'booking_id', booking.id %>
+                  <button class="customer-booking-confirm" type="submit">
+                    confirm<%#= booking_status(conf, decl) %>
+                  </button>
+                <% end -%>
+                <!-- &nbsp;&nbsp; -->
+                <%= form_tag('/booking_status') do -%>
+                  <%=  hidden_field_tag 'booking_id', booking.id %>
+                  <button class="customer-booking-decline" type="submit">
+                    decline<%#= booking_status(conf, decl) %>
+                  </button>
+                <% end -%>
+
+              </div>
+
+
+
             </td>
             <td class="other-bookings-artifact">
               <%= booking.artifact.name %>
             </td>
-            <td class="other-bookings-customer">
+            <!-- <td class="other-bookings-customer">
               <%= booking.user.first_name %> <%= booking.user.last_name %>
-            </td>
+            </td> -->
             <td class="other-bookings-email">
               <%= booking.user.email %>
             </td>
             <td class="other-bookings-checkout">
-              <%= booking.check_out_date %> / <%= booking.return_date %>
+              out: <%= booking.check_out_date %><br>in: <%= booking.return_date %>
             </td>
             <td class="other-bookings-price-total">
               <%= booking_cost(art_id, out, retur) %>
@@ -77,5 +98,5 @@
         <% end %>
       </table>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
