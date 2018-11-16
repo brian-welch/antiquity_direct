@@ -17,23 +17,12 @@ class DashboardsController < ApplicationController
     changed_booking = Booking.find(params[:booking_id])
     if params[:status] == "confirmed"
       changed_booking.booking_confirmed = true
+      changed_booking.booking_declined = false
     elsif params[:status] == "declined"
+      changed_booking.booking_confirmed = false
       changed_booking.booking_declined = true
     end
     changed_booking.save!
     redirect_to dashboard_path
   end
-  # def create
-  #   @booking = Booking.new(booking_params)
-  #   @booking.user = current_user
-  #   @booking.booking_pending = true
-  #   if @booking.save
-  #     flash[:notice] = "Booking was successfully requested. Now awaiting approval."
-  #     redirect_to dashboard_path
-  #   else
-  #     @artifact = @booking.artifact
-  #     render "artifacts/show" # , anchor: "#start-booking-form"
-  #   end
-
-  # end
 end
