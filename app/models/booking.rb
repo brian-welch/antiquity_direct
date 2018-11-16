@@ -16,8 +16,7 @@ class Booking < ApplicationRecord
   end
 
   def self_booking_check
-    # raise
-    if user.artifacts.ids.include?(:artifact_id)
+    if user.artifacts.ids.include?(artifact_id)
       errors.add(:base, "You cannot book your own artifact.")
     end
   end
